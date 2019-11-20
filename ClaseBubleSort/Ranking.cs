@@ -9,22 +9,34 @@ namespace ClaseBubleSort
         int teamsCount = 0;
         readonly Team[] teams = new Team[2];
 
+        private Team name;
+
+        public Ranking()
+        {
+        }
+
+        public Ranking(Team name)
+        {
+            this.name = name;
+        }
+
         internal void Add(Team team)
         {
             teams[teamsCount] = team;
             teamsCount++;
         }
 
-        internal int Position(string teamName)
+        internal int FindPositionByTeamName(string teamName)
         {
             for (int i = 0; i < teams.Length; i++)
             {
-                if (teams[i].Equals(teamName))
+                if (teams[i].TeamName(teamName))
                 {
-                    return i;
+                    return i + 1;
                 }
             }
-            return 1;
+
+            return 0;
         }
     }
 }

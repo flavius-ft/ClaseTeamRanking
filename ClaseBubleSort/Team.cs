@@ -14,5 +14,12 @@ namespace ClaseBubleSort
             this.name = name;
             this.points = points;
         }
+
+        public bool TeamName(string searchName)
+        {
+            string actualName = this.name;
+
+            return actualName == searchName;
+        }
     }
 }
