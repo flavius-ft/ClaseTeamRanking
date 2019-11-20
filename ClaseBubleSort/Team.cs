@@ -15,11 +15,9 @@ namespace ClaseBubleSort
             this.points = points;
         }
 
-        public bool TeamName(string searchName)
+        public bool EqualsTo(string searchName)
         {
-            string actualName = this.name;
-
-            return actualName == searchName;
+            return name.ToLower().Equals(searchName.ToLower());
         }
     }
 }
