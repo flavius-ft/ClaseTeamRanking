@@ -22,7 +22,7 @@ namespace ClaseBubleSort
         public void TeamIsNOTEqualToAStringWhenItHasTheADifferentName()
         {
             var team = new Team("a", 1);
-            Assert.False(team.EqualsTo("b"));
+            Assert.False(team.EqualsTo("B"));
         }
     }
 }
