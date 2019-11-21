@@ -17,7 +17,12 @@ namespace ClaseBubleSort
 
         public bool EqualsTo(string searchName)
         {
-            return string.Compare(name, searchName,true) >= 0;
+            return name.Equals(searchName);
+        }
+
+        public string SearchTeamName()
+        {
+            return name;
         }
     }
 }

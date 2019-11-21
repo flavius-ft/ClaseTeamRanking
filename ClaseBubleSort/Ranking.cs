@@ -26,5 +26,10 @@ namespace ClaseBubleSort
 
             return 0;
         }
+
+        internal string FindTeamByPosition(int position)
+        {
+            return teams[position - 1].SearchTeamName();
+        }
     }
 }

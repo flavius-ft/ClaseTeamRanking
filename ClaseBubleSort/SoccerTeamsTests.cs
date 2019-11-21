@@ -27,5 +27,17 @@ namespace ClaseBubleSort
 
             Assert.Equal(2, ranking.FindPositionByTeamName("Team2"));
         }
+
+        [Fact]
+        public void SearchTeamNameByPosition()
+        {
+            Ranking ranking = new Ranking();
+
+            ranking.Add(new Team("Team1", 30));
+            ranking.Add(new Team("Team2", 28));
+            ranking.Add(new Team("Team3", 25));
+
+            Assert.Equal("Team3", ranking.FindTeamByPosition(3));
+        }
     }
 }
