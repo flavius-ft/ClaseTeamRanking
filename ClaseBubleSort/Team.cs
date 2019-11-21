@@ -17,12 +17,17 @@ namespace ClaseBubleSort
 
         public bool EqualsTo(string searchName)
         {
-            return name.Equals(searchName,StringComparison.CurrentCultureIgnoreCase);
+            return name.Equals(searchName, StringComparison.CurrentCultureIgnoreCase);
         }
 
         public string SearchTeamName()
         {
             return name;
+        }
+
+        public int Points()
+        {
+            return points;
         }
     }
 }

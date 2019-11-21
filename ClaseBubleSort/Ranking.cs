@@ -31,5 +31,18 @@ namespace ClaseBubleSort
         {
             return teams[position - 1].SearchTeamName();
         }
+
+        internal int GetPoints(string teamName)
+        {
+            for (int i = 0; i < teams.Length; i++)
+            {
+                if (teams[i].EqualsTo(teamName))
+                {
+                    return teams[i].Points();
+                }
+            }
+
+            return 0;
+        }
     }
 }
