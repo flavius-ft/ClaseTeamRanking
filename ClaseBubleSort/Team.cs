@@ -17,7 +17,7 @@ namespace ClaseBubleSort
 
         public bool EqualsTo(string searchName)
         {
-            return name.Equals(searchName);
+            return name.Equals(searchName,StringComparison.CurrentCultureIgnoreCase);
         }
 
         public string SearchTeamName()
