@@ -4,16 +4,16 @@ using System.Text;
 
 namespace ClaseBubleSort
 {
-    class UpdateClasament
+    class UpdateRanking
     {
         private Team[] teams;
 
-        public UpdateClasament(Team[] teams)
+        public UpdateRanking(Team[] teams)
         {
             this.teams = teams;
         }
 
-        public Team[] NewClasament()
+        public Team[] NewRanking()
         {
             int count = 1;
             while (count != 0)

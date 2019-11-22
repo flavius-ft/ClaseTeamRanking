@@ -27,9 +27,9 @@ namespace ClaseBubleSort
             return 0;
         }
 
-        internal Team FindTeamByPosition(int position)
+        internal bool FindTeamByPosition(int position, string teamName)
         {
-            return teams[position - 1];
+            return teams[position - 1].EqualsTo(teamName);
         }
     }
 }

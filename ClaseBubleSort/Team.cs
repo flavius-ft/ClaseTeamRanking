@@ -20,7 +20,7 @@ namespace ClaseBubleSort
             return name.Equals(searchName, StringComparison.CurrentCultureIgnoreCase);
         }
 
-        internal bool SmallerThan(Team team)
+        public bool SmallerThan(Team team)
         {
             return points < team.points;
         }
