@@ -19,7 +19,7 @@ namespace ClaseBubleSort
         }
 
         [Fact]
-        public void TeamIsNOTEqualToAStringWhenItHasTheADifferentName()
+        public void TeamIsNOTEqualToAStringWhenItHasADifferentName()
         {
             var team = new Team("a", 1);
             Assert.False(team.EqualsTo("B"));
