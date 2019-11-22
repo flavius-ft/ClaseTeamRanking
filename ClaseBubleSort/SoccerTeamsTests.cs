@@ -36,8 +36,8 @@ namespace ClaseBubleSort
             ranking.Add(new Team("Team1", 30));
             ranking.Add(new Team("Team2", 28));
             ranking.Add(new Team("Team3", 25));
-
-            Assert.True(ranking.FindTeamByPosition(2, "Team2"));
+            
+            Assert.True(ranking.FindTeamByPosition(2).EqualsTo("Team2"));
         }
     }
 }
