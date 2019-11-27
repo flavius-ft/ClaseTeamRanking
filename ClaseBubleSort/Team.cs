@@ -30,9 +30,9 @@ namespace ClaseBubleSort
             return points < team.points;
         }
 
-        internal void Give(int addPoints)
+        internal void Update(Game game)
         {
-            points += addPoints;
+            points += game.Points(name);
         }
     }
 }

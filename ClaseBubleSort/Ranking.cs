@@ -35,17 +35,26 @@ namespace ClaseBubleSort
             return teams[position - 1];
         }
 
-        internal void UpdateWinerScore(string firstTeam, int firstTeamPoints, int secondTeamPoints, string secondTeam)
+        //internal void Update(string firstTeam, int firstTeamGoals, int secodTeamGoals, string secondTeam)
+        //{
+        //    if (firstTeamGoals > secodTeamGoals)
+        //    {
+        //        teams[GetPositionByTeamName(firstTeam) - 1].Give(winPoints);
+        //    }
+        //    else if (firstTeamGoals == secodTeamGoals)
+        //    {
+        //        teams[GetPositionByTeamName(firstTeam) - 1].Give(equalPoints);
+        //        teams[GetPositionByTeamName(secondTeam) - 1].Give(equalPoints);
+        //    }
+        //}
+
+        internal void Update(Game game)
         {
-            if (firstTeamPoints > secondTeamPoints)
+            foreach (var team in teams)
             {
-                teams[GetPositionByTeamName(firstTeam) - 1].Give(winPoints);
+                team.Update(game);
             }
-            else if (firstTeamPoints == secondTeamPoints)
-            {
-                teams[GetPositionByTeamName(firstTeam) - 1].Give(equalPoints);
-                teams[GetPositionByTeamName(secondTeam) - 1].Give(equalPoints);
-            }
+
         }
     }
 }

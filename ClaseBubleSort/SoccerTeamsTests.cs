@@ -39,14 +39,33 @@ namespace ClaseBubleSort
         [Fact]
         public void ShowFinalResultAfterTwoTeamsGame()
         {
-            Team[] rankingSoccer = new Team[3];
-            ranking.Add(new Team("A", 10));
-            ranking.Add(new Team("B" , 4));
-            ranking.Add(new Team("C", 2));
+            Team a = new Team("A", 10);
+            Team b = new Team("B", 4);
+            Team c = new Team("C", 2);
 
-            ranking.UpdateWinerScore("C", 3, 1, "B");
+            ranking.Add(a);
+            ranking.Add(b);
+            ranking.Add(c);
 
-            Assert.True(ranking.FindTeamByPosition(3).IsEqualTo(5));
+            ranking.Update(new Game("C", 3, 1, "B"));
+
+            Assert.Equal(c, ranking.FindTeamByPosition(2));
+        }
+
+        [Fact]
+        public void ShowFinalResultAfterGame()
+        {
+            Team a = new Team("A", 10);
+            Team b = new Team("B", 4);
+            Team c = new Team("C", 2);
+
+            ranking.Add(a);
+            ranking.Add(b);
+            ranking.Add(c);
+
+            ranking.Update(new Game("C", 3, 1, "B"));
+
+            Assert.Equal(c, ranking.FindTeamByPosition(2));
         }
     }
 }
