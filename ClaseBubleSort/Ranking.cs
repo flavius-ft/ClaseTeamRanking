@@ -8,6 +8,9 @@ namespace ClaseBubleSort
     {
         private Team[] teams = new Team[0];
 
+        const int addWinPoints = 3;
+        const int addEqualPoints = 1;
+
         internal void Add(Team team)
         {
             Array.Resize(ref teams, teams.Length + 1);
@@ -32,34 +35,19 @@ namespace ClaseBubleSort
             return teams[position - 1];
         }
 
-        internal Team[] SortRanking(Team[] teams)
-        { 
-            bool notSorted = true;
-
-            while (notSorted)
+        internal Team[] UpdateRanking(string firstTeam, int firstTeamPoints, int secondTeamPoints, string secondTeam)
+        {
+            if (firstTeamPoints > secondTeamPoints)
             {
-                for (int i = 0; i < teams.Length - 1; i++)
-                {
-                    if (teams[i].SmallerThan(teams[i + 1]))
-                    {
-                        Team temp = teams[i];
-                        teams[i] = teams[i + 1];
-                        teams[i + 1] = temp;
-
-                        continue;
-                    }
-                }
-
-                notSorted = false;
+                teams[GetPositionByTeamName(firstTeam)].GetPoints(teams, GetPositionByTeamName(firstTeam), addWinPoints);
+            }
+            else if (firstTeamPoints == secondTeamPoints)
+            {
+                teams[GetPositionByTeamName(firstTeam)].GetPoints(teams, GetPositionByTeamName(firstTeam), addEqualPoints);
+                teams[GetPositionByTeamName(secondTeam)].GetPoints(teams, GetPositionByTeamName(secondTeam), addEqualPoints);
             }
 
             return teams;
-        }
-
-        internal Team[] Update(int newPoints, int position)
-        {
-            teams[position - 1].ChangeWith(newPoints);
-            return SortRanking(teams);
         }
     }
 }

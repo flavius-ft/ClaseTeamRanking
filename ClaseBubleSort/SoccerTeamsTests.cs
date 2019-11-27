@@ -37,28 +37,16 @@ namespace ClaseBubleSort
         }
 
         [Fact]
-        public void SortRankingAndCompareWithASortedOne()
+        public void ShowFinalResultAfterTwoTeamsGame()
         {
-            Team[] randomRanking = new Team[3];
-            randomRanking[0] = new Team("Team1", 20);
-            randomRanking[1] = new Team("Team2", 25);
-            randomRanking[2] = new Team("Team3", 30);
+            Team[] rankingSoccer = new Team[3];
+            rankingSoccer[0] = new Team("A", 10);
+            rankingSoccer[1] = new Team("B" , 4);
+            rankingSoccer[2] = new Team("C", 2);
 
-            Team[] sortedRanking = new Team[3];
-            sortedRanking[0] = new Team("Team3", 30);
-            sortedRanking[1] = new Team("Team2", 25);
-            sortedRanking[2] = new Team("Team1", 20);
+            rankingSoccer = ranking.UpdateRanking("C", 3, 1, "B");
 
-            Assert.Equal(sortedRanking, ranking.SortRanking(randomRanking));
-        }
-
-        [Fact]
-        public void ShowFinalResultOfTwoTeamsGame()
-        {
-            Team[] twoTeamsGame = new Team[2];
-            twoTeamsGame[0] = new Team("A", 2);
-            twoTeamsGame[1] = new Team("B" , 4);
-            
+            Assert.True(ranking.);
         }
     }
 }
