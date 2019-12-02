@@ -12,7 +12,7 @@ namespace ClaseBubleSort
         {
             Game game = new Game("teamA", 2, 1, "teamB");
 
-            Assert.Equal(3, game.Points());
+            Assert.Equal(3, game.Points("teamA"));
         }
 
         [Fact]
@@ -20,7 +20,7 @@ namespace ClaseBubleSort
         {
             Game game = new Game("teamA", 1, 1, "teamB");
 
-            Assert.Equal(1, game.Points());
+            Assert.Equal(1, game.Points("teamA"));
         }
 
         [Fact]
@@ -28,7 +28,7 @@ namespace ClaseBubleSort
         {
             Game game = new Game("teamA", 0, 1, "teamB");
 
-            Assert.Equal(0, game.Points());
+            Assert.Equal(0, game.Points("teamA"));
         }
     }
 }

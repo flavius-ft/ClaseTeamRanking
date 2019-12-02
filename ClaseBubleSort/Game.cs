@@ -22,11 +22,22 @@ namespace ClaseBubleSort
             this.scoreTeamB = scoreTeamB;
         }
 
-        internal int Points()
+        internal int Points(string name)
         {
-            if (scoreTeamA > scoreTeamB)
+            if (name == teamA)
             {
-                return winPoints;
+                if (scoreTeamA > scoreTeamB)
+                {
+                    return winPoints;
+                }
+            }
+
+            if (name == teamB)
+            {
+                if (scoreTeamB > scoreTeamA)
+                {
+                    return winPoints;
+                }
             }
 
             if (scoreTeamA == scoreTeamB)
