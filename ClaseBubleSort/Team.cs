@@ -32,7 +32,7 @@ namespace ClaseBubleSort
 
         internal void Update(Game game)
         {
-            points += game.Points(name);
+            points += game.Points();
         }
     }
 }

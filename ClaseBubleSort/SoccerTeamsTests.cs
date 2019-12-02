@@ -49,7 +49,7 @@ namespace ClaseBubleSort
 
             ranking.Update(new Game("C", 3, 1, "B"));
 
-            Assert.Equal(c, ranking.FindTeamByPosition(2));
+            Assert.True(ranking.FindTeamByPosition(3).EqualsTo("C"));
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace ClaseBubleSort
 
             ranking.Update(new Game("C", 3, 1, "B"));
 
-            Assert.Equal(c, ranking.FindTeamByPosition(2));
+            Assert.True(ranking.FindTeamByPosition(3).EqualsTo("C"));
         }
     }
 }
