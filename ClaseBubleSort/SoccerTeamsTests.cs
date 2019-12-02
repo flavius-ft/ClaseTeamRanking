@@ -49,7 +49,23 @@ namespace ClaseBubleSort
 
             ranking.Update(new Game("C", 3, 1, "B"));
 
-            Assert.True(ranking.FindTeamByPosition(3).EqualsTo("C"));
+            Assert.True(ranking.FindTeamByPosition(2).EqualsTo("C"));
+        }
+
+        [Fact]
+        public void ShowFinalRanking()
+        {
+            Team a = new Team("A", 10);
+            Team b = new Team("B", 4);
+            Team c = new Team("C", 2);
+
+            ranking.Add(a);
+            ranking.Add(b);
+            ranking.Add(c);
+
+            ranking.Update(new Game("C", 3, 1, "B"));
+
+            Assert.True(ranking.FindTeamByPosition(2).EqualsTo("C"));
         }
     }
 }
