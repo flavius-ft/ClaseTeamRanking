@@ -11,6 +11,28 @@ namespace ClaseBubleSort
         const int winPoints = 3;
         const int equalPoints = 1;
 
+        private void Sort(Team[] teams)
+        {
+            bool sorted = false;
+
+            while (!sorted)
+            {
+                sorted = true;
+
+                for (int i = 0; i < teams.Length - 1; i++)
+                {
+                    if (teams[i].SmallerThan(teams[i + 1]))
+                    {
+                        Team temp = teams[i];
+                        teams[i] = teams[i + 1];
+                        teams[i + 1] = temp;
+
+                        sorted = false;
+                    }
+                }
+            }
+        }
+
         internal void Add(Team team)
         {
             Array.Resize(ref teams, teams.Length + 1);
@@ -26,7 +48,7 @@ namespace ClaseBubleSort
                     return i + 1;
                 }
             }
-            
+
             return 0;
         }
 
@@ -54,28 +76,8 @@ namespace ClaseBubleSort
             {
                 team.Update(game);
             }
-                bool notSorted = true;
 
-                while (notSorted)
-                {
-                    for (int i = 0; i < teams.Length - 1; i++)
-                    {
-                        if (teams[i].SmallerThan(teams[i + 1]))
-                        {
-                            Team temp = teams[i];
-                            teams[i] = teams[i + 1];
-                            teams[i + 1] = temp;
-
-                        continue;
-                        }
-
-                        if (i == teams.Length - 1 - 1)
-                    {
-                        notSorted = false;
-                    }
-
-                    }
-                }
+            Sort(teams);
         }
     }
 }
