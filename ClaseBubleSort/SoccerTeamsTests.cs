@@ -40,8 +40,40 @@ namespace ClaseBubleSort
         public void ShowFinalResultAfterTwoTeamsGame()
         {
             Team a = new Team("A", 10);
-            Team b = new Team("B", 4);
-            Team c = new Team("C", 2);
+            Team b = new Team("B", 9);
+            Team c = new Team("C", 8);
+
+            ranking.Add(a);
+            ranking.Add(b);
+            ranking.Add(c);
+
+            ranking.Update(new Game("C", 3, 1, "B"));
+
+            Assert.True(ranking.FindTeamByPosition(1).EqualsTo("C"));
+        }
+
+        [Fact]
+        public void SortWhenSecondTeamWinsAndBeforWinAllSHadSamePoints()
+        {
+            Team a = new Team("A", 10);
+            Team b = new Team("B", 10);
+            Team c = new Team("C", 10);
+
+            ranking.Add(a);
+            ranking.Add(b);
+            ranking.Add(c);
+
+            ranking.Update(new Game("B", 3, 1, "C"));
+
+            Assert.True(ranking.FindTeamByPosition(1).EqualsTo("B"));
+        }
+
+        [Fact]
+        public void SortRankingWhenLastTeamWins()
+        {
+            Team a = new Team("A", 10);
+            Team b = new Team("B", 5);
+            Team c = new Team("C", 3);
 
             ranking.Add(a);
             ranking.Add(b);

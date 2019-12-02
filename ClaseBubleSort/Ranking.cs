@@ -66,11 +66,15 @@ namespace ClaseBubleSort
                             teams[i] = teams[i + 1];
                             teams[i + 1] = temp;
 
-                            continue;
+                        continue;
                         }
+
+                        if (i == teams.Length - 1 - 1)
+                    {
+                        notSorted = false;
                     }
 
-                    notSorted = false;
+                    }
                 }
         }
     }

@@ -26,9 +26,9 @@ namespace ClaseBubleSort
         [Fact]
         public void GetZeroPointsWhenTheTeamHaveLessGoals()
         {
-            Game game = new Game("teamA", 0, 1, "teamB");
+            Game game = new Game("teamA", 1, 0, "teamB");
 
-            Assert.Equal(0, game.Points("teamA"));
+            Assert.Equal(0, game.Points("teamB"));
         }
     }
 }
