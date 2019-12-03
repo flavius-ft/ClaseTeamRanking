@@ -20,11 +20,6 @@ namespace ClaseBubleSort
             return name.Equals(searchName, StringComparison.CurrentCultureIgnoreCase);
         }
 
-        public bool IsEqualTo(int secondTeamPoints)
-        {
-            return points.Equals(secondTeamPoints);
-        }
-
         public bool SmallerThan(Team team)
         {
             return points < team.points;

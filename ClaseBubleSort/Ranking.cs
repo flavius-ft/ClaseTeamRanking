@@ -11,7 +11,7 @@ namespace ClaseBubleSort
         const int winPoints = 3;
         const int equalPoints = 1;
 
-        private void Sort(Team[] teams)
+        private void Sort()
         {
             bool sorted = false;
 
@@ -57,19 +57,6 @@ namespace ClaseBubleSort
             return teams[position - 1];
         }
 
-        //internal void Update(string firstTeam, int firstTeamGoals, int secodTeamGoals, string secondTeam)
-        //{
-        //    if (firstTeamGoals > secodTeamGoals)
-        //    {
-        //        teams[GetPositionByTeamName(firstTeam) - 1].Give(winPoints);
-        //    }
-        //    else if (firstTeamGoals == secodTeamGoals)
-        //    {
-        //        teams[GetPositionByTeamName(firstTeam) - 1].Give(equalPoints);
-        //        teams[GetPositionByTeamName(secondTeam) - 1].Give(equalPoints);
-        //    }
-        //}
-
         internal void Update(Game game)
         {
             foreach (var team in teams)
@@ -77,7 +64,7 @@ namespace ClaseBubleSort
                 team.Update(game);
             }
 
-            Sort(teams);
+            Sort();
         }
     }
 }
